@@ -10,4 +10,8 @@ class SiteController extends Controller
         $nome = 'Jose';
         return view('auth.login', compact('nome'));
     }
+
+    public function dashboard(Request $request){
+         return view('dashboard.index');
+    }
 }

@@ -10,6 +10,8 @@ Route::get('/', function () {
 
 Route::get('/login',[SiteController::class,'index']);
 
+Route::post('/login',[AuthController::class,'login'])->name('login');
+
 //Rotas do cadastro
 
 Route::get('/cadastro', function(){
@@ -17,3 +19,9 @@ Route::get('/cadastro', function(){
 });
 
 Route::post('/cadastro',[AuthController::class, 'cadastrar']);
+
+
+
+Route::prefix('/dashboard')->middleware(['auth'])->group(function(){
+    Route::get('/',[SiteController::class,'dashboard'] );
+});
