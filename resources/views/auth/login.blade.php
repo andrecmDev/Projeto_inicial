@@ -8,7 +8,7 @@
 <body>
     <h1>login tela</h1>
 
-    <p>{{$nome}}</p>
+    
     
 
 </body>
